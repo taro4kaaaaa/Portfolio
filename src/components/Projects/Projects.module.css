@@ -1,0 +1,362 @@
+.project-1 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: inherit;
+  position: relative;
+}
+
+/* Заголовок PROJECTS */
+.projects {
+  grid-column: 3 / 6;
+  grid-row: 1 / 2;
+  font-family: 'Inter', sans-serif;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  color: rgba(0, 0, 0, 1);
+  align-self: center;
+  justify-self: start;
+  margin: 0;
+  z-index: 2;
+}
+
+/* Группа 1 */
+.group1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 2 / 9;
+  grid-row: 3 / 5;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Группа 2 */
+.group2 {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 5 / 12;
+  grid-row: 5 / 7;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Группа 3 */
+.group3 {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 2 / 9;
+  grid-row: 7 / 10;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Группа 4 */
+.group4 {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  grid-column: 5 / 12;
+  grid-row: 9 / 11;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit;
+  border-radius: 16px;
+  z-index: 2;
+}
+
+/* Текст проектов */
+.a-project-demonstrating,
+.a-project-consisting,
+.a-project-consisting-2,
+.a-project-consisting-1 {
+  width: 82.9%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Контейнеры для логотипов */
+.tech-stack-logos,
+.tech-stack-logos-1,
+.tech-stack-logos-2,
+.tech-stack-logos-3 {
+  position: relative;
+  width: 17.1%;
+  height: 100%;
+  overflow: hidden;
+  background-color: inherit;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Логотипы */
+.group44,
+.group68,
+.group70,
+.group50 {
+  position: absolute;
+  width: 55.7%;
+  height: 55.7%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Позиционирование логотипов */
+.group44 {
+  left: 22.4%;
+  top: 22.4%;
+}
+
+.group68 {
+  left: 22.4%;
+  top: 22.4%;
+}
+
+.group70 {
+  left: 21.9%;
+  top: 21.9%;
+}
+
+.group50 {
+  left: 22.4%;
+  top: 28.1%;
+}
+
+/* Hover эффекты */
+.group44:hover,
+.group68:hover,
+.group70:hover,
+.group50:hover {
+  transform: scale(1.3);
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .project-1 {
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    height: 1000px;
+    overflow-y: auto;
+    padding: 20px 0;
+  }
+
+  /* Заголовок PROJECTS */
+  .projects {
+    grid-column: 2 / 8;
+    grid-row: 1 / 2;
+    font-size: 48px;
+    text-align: center;
+    justify-self: center;
+    margin: 20px 0;
+  }
+
+  /* Группа 1 */
+  .group1 {
+    margin-top: -10px;
+    grid-column: 1 / 9;
+    grid-row: 2 / 4;
+    flex-direction: row;
+  }
+
+  /* Группа 2 */
+  .group2 {
+    
+    grid-column: 1 / 9;
+    grid-row: 4 / 6;
+    flex-direction: row;
+  }
+
+  /* Группа 3 */
+  .group3 {
+    
+    grid-column: 1 / 9;
+    grid-row: 6 / 8;
+    flex-direction: row;
+  }
+
+  /* Группа 4 */
+  .group4 {
+    margin-top: 40px;
+    grid-column: 1 / 9;
+    grid-row: 8 / 10;
+    flex-direction: row;
+  }
+
+  /* Текст проектов */
+  .a-project-demonstrating,
+  .a-project-consisting,
+  .a-project-consisting-2,
+  .a-project-consisting-1 {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  /* Контейнеры для логотипов */
+  .tech-stack-logos,
+  .tech-stack-logos-1,
+  .tech-stack-logos-2,
+  .tech-stack-logos-3 {
+    width: 20%;
+    height: 100%;
+  }
+
+  /* Логотипы */
+  .group44,
+  .group68,
+  .group70,
+  .group50 {
+    width: 60%;
+    height: 60%;
+  }
+}
+ @media screen and (max-width: 767px) {
+  .project-1 {
+    grid-template-rows: repeat(9, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* Заголовок PROJECTS */
+  .projects {
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    font-size: 40px;
+    text-align: center;
+    justify-self: center;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  /* Группа 1 */
+  .group1 {
+    grid-column: 1 / 5;
+    grid-row: 2 / 4; /* Уменьшаем количество строк */
+    flex-direction: row; /* МЕНЯЕМ НА row ДЛЯ ГОРИЗОНТАЛЬНОГО РАСПОЛОЖЕНИЯ */
+    align-items: center;
+    margin: 5px 0;
+    height: auto;
+    min-height: 180px; /* Уменьшаем минимальную высоту */
+  }
+
+  /* Группа 2 */
+  .group2 {
+    grid-column: 1 / 5;
+    grid-row: 4 / 6; /* Уменьшаем количество строк */
+    flex-direction: row; /* МЕНЯЕМ НА row */
+    align-items: center;
+    margin: 5px 0;
+    height: auto;
+    min-height: 180px;
+  }
+
+  /* Группа 3 */
+  .group3 {
+    grid-column: 1 / 5;
+    grid-row: 6 / 8; /* Уменьшаем количество строк */
+    flex-direction: row; /* МЕНЯЕМ НА row */
+    align-items: center;
+    margin: 5px 0;
+    height: auto;
+    min-height: 180px;
+  }
+
+  /* Группа 4 */
+  .group4 {
+    grid-column: 1 / 5;
+    grid-row: 8 / 10; /* Уменьшаем количество строк */
+    flex-direction: row; /* МЕНЯЕМ НА row */
+    align-items: center;
+    margin: 5px 0 20px 0;
+    height: auto;
+    min-height: 180px;
+  }
+
+  /* Текст проектов */
+  .a-project-demonstrating,
+  .a-project-consisting,
+  .a-project-consisting-2,
+  .a-project-consisting-1 {
+    width: 75%; /* Уменьшаем ширину текста */
+    height: auto;
+    min-height: auto; /* Убираем min-height */
+    font-size: 12px; /* Уменьшаем размер шрифта */
+    padding: 8px;
+    order: 2; /* Текст справа */
+  }
+
+  /* Контейнеры для логотипов */
+  .tech-stack-logos,
+  .tech-stack-logos-1,
+  .tech-stack-logos-2,
+  .tech-stack-logos-3 {
+    width: 25%; /* Увеличиваем ширину логотипа */
+    height: auto;
+    min-height: 80px;
+    order: 1; /* Логотип слева */
+    margin: 0 10px 0 0; /* Отступ справа */
+    position: relative;
+  }
+
+  /* Логотипы */
+  .group44,
+  .group68,
+  .group70,
+  .group50 {
+    width: 60px;
+    height: 60px;
+    position: relative; /* Меняем с absolute на relative */
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: 0 auto; /* Центрируем */
+  }
+
+  /* Hover эффекты для мобильных */
+  .group44:hover,
+  .group68:hover,
+  .group70:hover,
+  .group50:hover {
+    transform: scale(1.1);
+  }
+}

@@ -1,0 +1,201 @@
+/* Home.module.css */
+.home {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: inherit;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 0;
+  padding: 10px;
+}
+
+/* Profile - использование Grid */
+.profile {
+  grid-column: 2 / 6;
+  grid-row: 3 / 5;
+  margin-left: 60px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 9.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  color: rgba(0, 0, 0, 1);
+  z-index: 10;
+  align-self: start;
+  justify-self: center;
+}
+
+/* Цитата */
+.everything-we-do {
+  grid-column: 4 / 7;
+  grid-row: 8 / 11;
+  margin-right: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.875rem, 1.5vw, 1.375rem);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: left;
+  color: rgba(0, 0, 0, 1);
+  z-index: 10;
+  align-self: end;
+}
+
+/* Контейнер для изображений-кругов */
+.ellipsesContainer {
+  position: absolute;
+  left: 3.39%;
+  top: 9.54%;
+  width: 7.24%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+}
+
+/* Стили для всех изображений-кругов */
+.ellipse1,
+.ellipse2,
+.ellipse3,
+.ellipse4 {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+
+/* Большое фото - использование Grid */
+.fd7ecbec263043b7 {
+  grid-column: 7 / 12;
+  grid-row: 2 / 11;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  z-index: 5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Подпись Photo by Andrew Maslov - вертикальная */
+.photo-by-andrew {
+  position: absolute;
+  right: 7%;
+  top: 67%;
+  transform: translateY(-50%);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.75rem, 1.2vw, 1.25rem);
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  writing-mode: vertical-rl;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+
+.photo-by-andrew:hover {
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .home {
+    height: 100vh;
+    overflow-y: auto;
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  /* Profile */
+  .profile {
+    grid-column: 3 / 6;
+    grid-row: 2 / 3;
+    margin-left: 20px;
+    font-size: clamp(3rem, 8vw, 5rem);
+    white-space: normal;
+    text-align: left;
+    justify-self: start;
+  }
+
+  /* Цитата */
+  .everything-we-do {
+    grid-column: 2 / 6;
+    grid-row: 11 / 12;
+    margin-right: 30px;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    line-height: 1.5;
+  }
+
+  /* Контейнер для кругов */
+  .ellipsesContainer {
+    display: none;
+  }
+
+  /* Большое фото */
+  .fd7ecbec263043b7 {
+    grid-column: 2 / 8;
+    grid-row: 3 / 11;
+    object-position: center;
+  }
+
+  /* Подпись */
+  .photo-by-andrew {
+    right: 10%;
+    top: 75%;
+    font-size: clamp(0.7rem, 1.5vw, 1rem);
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .home {
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+    min-height: 650px;
+    overflow-y: auto;
+  }
+
+  .profile {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    margin: 20px;
+    font-size: clamp(2.5rem, 10vw, 4rem);
+    white-space: normal;
+    text-align: center;
+    justify-self: center;
+    z-index: 20;
+  }
+
+  .everything-we-do {
+    grid-column: 1 / 5;
+    grid-row: 7 / 8;
+    margin: 20px;
+    font-size: 1rem;
+    text-align: center;
+    align-self: center;
+    z-index: 20;
+  }
+
+  .ellipsesContainer {
+    display: none;
+  }
+
+  .fd7ecbec263043b7 {
+    grid-column: 1 / 5;
+    grid-row: 2 / 8;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    object-fit: cover;
+  }
+
+  .photo-by-andrew {
+    display: none;
+  }
+}
