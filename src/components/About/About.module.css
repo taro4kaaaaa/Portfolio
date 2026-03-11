@@ -11,6 +11,18 @@
   scroll-margin-top: -20px;
 }
 
+.hidden-blur {
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 2s ease;
+}
+
+.show-blur {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 /* ABOUT ME заголовок */
 .about-me-1 {
   margin-top: -20px;

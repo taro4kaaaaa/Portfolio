@@ -3,6 +3,7 @@ import styles from './Contact.module.css'
 import imgfullsizerender_3_1 from '../../assets/fullsizerender-3-1.png'
 import { ContactModal } from "./ContactModal"
 import { useTranslation } from "react-i18next"
+import { useEffect, useRef } from "react"
 
 interface ContactProps {
   className?: string
@@ -12,9 +13,36 @@ export const Contact: React.FC<ContactProps> = ({ className }) => {
 
   const [open, setOpen] = useState(false)
   const { t } = useTranslation()
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles["show-blur"])
+          }
+        })
+      },
+      {
+        threshold: 0.2
+      }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+
+  }, [])
 
   return (
-    <div id = "contacts" className={`${styles['contact-1']} ${className || ''}`}>
+    <div 
+    ref={sectionRef}
+    id = "contacts" 
+    className={`${styles['contact-1']} ${styles["hidden-blur"]} ${className || ''}`}
+    >
         <span className={styles['contacts']}>{t("contact.title")}</span>
 
         <a 

@@ -6,7 +6,7 @@ export const ThemeButton = () => {
 
   return (
     <button onClick={toggleTheme}>
-      {theme === "light" ? "🌙" : "☀️"}
+      {theme === "light" ? "🌑" : "🌕"}
     </button>
   )
 }

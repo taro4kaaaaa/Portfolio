@@ -10,6 +10,18 @@
   scroll-margin-top: -90px;
 }
 
+.hidden-blur {
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 2s ease;
+}
+
+.show-blur {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
 /* Заголовок CONTACTS */
 .contacts {
   grid-column: 3 / 6;

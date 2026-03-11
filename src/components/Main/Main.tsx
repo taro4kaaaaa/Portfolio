@@ -1,5 +1,6 @@
 import styles from './Main.module.css'
 import { useTranslation } from "react-i18next"
+import { useEffect, useRef } from "react"
 import imgslice_4_1 from '../../assets/slice-4-1.png'
 import imgslice_5_1 from '../../assets/slice-5-1.png'
 import imgslice_6_1 from '../../assets/slice-6-1.png'
@@ -11,9 +12,35 @@ interface MainProps {
 export const Main: React.FC<MainProps> = ({ className }) => {
 
   const { t } = useTranslation()
+  const sectionRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles["show-blur"])
+          }
+        })
+      },
+      {
+        threshold: 0.2
+      }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => observer.disconnect()
+
+  }, [])
 
   return (
-    <div className={`${styles['main']} ${className || ''}`}>
+   <div
+    ref={sectionRef}
+    className={`${styles.main} ${styles["hidden-blur"]} ${className || ''}`}
+    >
       <span className={styles['im-konstantin-tarasov']}>
         I'M KONSTANTIN TARASOV<br />FRONTEND-DEVELOPER
       </span>

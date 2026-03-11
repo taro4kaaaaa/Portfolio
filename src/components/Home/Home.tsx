@@ -17,7 +17,7 @@ export const Home: React.FC<HomeProps> = ({ className }) => {
 
   return (
     <div className={`${styles.home} ${className || ''}`}>
-
+      
       {/* 🔹 Переключатель языка */}
       <div className={styles.languageSwitcher}>
         <button onClick={() => i18n.changeLanguage("en")}>EN</button>

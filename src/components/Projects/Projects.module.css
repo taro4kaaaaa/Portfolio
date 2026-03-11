@@ -10,6 +10,17 @@
   position: relative;
 }
 
+.projectItem {
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.5s ease;
+  will-change: transform, opacity;
+}
+
+.projectShow {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Заголовок PROJECTS */
 .projects {
   grid-column: 3 / 6;

@@ -1,5 +1,6 @@
 import styles from './Projects.module.css'
 import { useTranslation } from "react-i18next"
+import { useEffect } from "react"
 import imggroup_44 from '../../assets/group-44.png'
 import imggroup_70 from '../../assets/group-70.png'
 import imggroup_50 from '../../assets/group-50.png'
@@ -13,13 +14,33 @@ export const Projects: React.FC<ProjectsProps> = ({ className }) => {
 
   const { t } = useTranslation()
 
+  useEffect(() => {
+
+  const items = document.querySelectorAll(`.${styles.projectItem}`)
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add(styles.projectShow)
+        observer.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.2 })
+
+  items.forEach((item) => observer.observe(item))
+
+  return () => observer.disconnect()
+
+}, [])
+
   return (
     <div id = "projects" className={`${styles['project-1']} ${className || ''}`}>
-      <span className={styles['projects']}>{t("projects.title")}</span>
+      <span className={styles['projects']}>{t("projects.title")} </span>
       
       {/* Group 1 */}
-      <div className={styles['group1']}>
-        <span className={styles['a-project-demonstrating']}>
+      <div className={`${styles.group1} ${styles.projectItem}`}
+      style={{ transitionDelay: "0.1s" }}>
+        <span className={styles['a-project-demonstrating']} >
           {t("projects.object1")}
         </span>
         <div className={styles['tech-stack-logos']}>
@@ -34,7 +55,8 @@ export const Projects: React.FC<ProjectsProps> = ({ className }) => {
       </div>
 
       {/* Group 2 */}
-      <div className={styles['group2']}>
+      <div className={`${styles.group2} ${styles.projectItem}`}
+      style={{ transitionDelay: "0.3s" }}>
         <span className={styles['a-project-consisting']}>
           {t("projects.object2")}
         </span>
@@ -50,7 +72,8 @@ export const Projects: React.FC<ProjectsProps> = ({ className }) => {
       </div>
 
       {/* Group 3 */}
-      <div className={styles['group3']}>
+      <div className={`${styles.group3} ${styles.projectItem}`}
+      style={{ transitionDelay: "0.5s" }}>
         <span className={styles['a-project-consisting-1']}>
           {t("projects.object3")}
         </span>
@@ -66,7 +89,8 @@ export const Projects: React.FC<ProjectsProps> = ({ className }) => {
       </div>
 
       {/* Group 4 */}
-      <div className={styles['group4']}>
+      <div className={`${styles.group4} ${styles.projectItem}`}
+      style={{ transitionDelay: "0.7s" }}>
         <span className={styles['a-project-consisting-2']}>
           {t("projects.object4")}
         </span>
