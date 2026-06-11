@@ -112,6 +112,7 @@
 
 ### Архитектура
 
+```bash
 React/Vite
     ↓
 npm run build
@@ -121,6 +122,7 @@ dist
 Nginx
     ↓
 Docker Container
+```
 
 ---
 
@@ -150,9 +152,11 @@ git clone https://github.com/taro4kaaaaa/Portfolio.git
 cd Portfolio
 npm install
 npm run dev
+```
 
 Run with Docker
 
 ```bash
 docker build -t portfolio-app .
 docker run -d -p 8080:80 --name portfolio portfolio-app
+```
