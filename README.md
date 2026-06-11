@@ -79,11 +79,48 @@
 
 ## 🛠 Tech Stack
 
+### Frontend
+
 - React
 - TypeScript
 - Vite
-- SCSS / CSS Modules
+- SCSS Modules
 - Context API
+- i18next
+
+### DevOps
+
+- Docker
+- Dockerfile
+- Nginx
+- Linux
+- Multi-stage Build
+
+---
+
+## 🐳 Containerization
+
+Приложение контейнеризировано с использованием Docker и разворачивается через Nginx.
+
+### Особенности
+
+- Multi-stage Docker build
+- Отдельный этап сборки на Node.js
+- Production-развёртывание через Nginx
+- Оптимизация размера образа
+- Использование `.dockerignore`
+
+### Архитектура
+
+React/Vite
+    ↓
+npm run build
+    ↓
+dist
+    ↓
+Nginx
+    ↓
+Docker Container
 
 ---
 
@@ -106,8 +143,16 @@
 
 ## ⚙️ Installation
 
+Run locally
+
 ```bash
 git clone https://github.com/taro4kaaaaa/Portfolio.git
 cd Portfolio
 npm install
 npm run dev
+
+Run with Docker
+
+```bash
+docker build -t portfolio-app .
+docker run -d -p 8080:80 --name portfolio portfolio-app
