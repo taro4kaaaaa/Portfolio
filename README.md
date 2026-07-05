@@ -91,10 +91,11 @@
 ### DevOps
 
 - Docker
-- Dockerfile
-- Nginx
+- Multi-stage Docker Build
+- Nginx (production server)
+- Kubernetes (Deployment, Service, Probes)
 - Linux
-- Multi-stage Build
+- Docker Hub (container registry)
 
 ---
 
@@ -112,7 +113,7 @@
 
 ### Архитектура
 
-```bash
+```text
 React/Vite
     ↓
 npm run build
@@ -122,6 +123,37 @@ dist
 Nginx
     ↓
 Docker Container
+```
+
+---
+
+## ☸️ Kubernetes Deployment
+
+ Приложение развёрнуто в Kubernetes-кластере с использованием базовой production-инфраструктуры.
+
+### Особенности
+
+- Deployment с 2 репликами для обеспечения отказоустойчивости
+- Service (ClusterIP) для внутренней маршрутизации трафика
+- Использование labels для связывания Service и Pods
+- Настроены health checks:
+    - readinessProbe — проверка готовности контейнера
+    - livenessProbe — проверка живости приложения
+- Docker image загружается из Docker Hub
+- Поддержка масштабирования через replicas
+
+### Архитектура
+
+```text
+User Request
+    ↓
+Service (ClusterIP)
+    ↓
+Deployment
+    ↓
+Pods (React + Nginx)
+    ↓
+Docker Image (k0nstantinnn/portfolio)
 ```
 
 ---
@@ -159,4 +191,13 @@ Run with Docker
 ```bash
 docker build -t portfolio-app .
 docker run -d -p 8080:80 --name portfolio portfolio-app
+```
+
+Run with Kubernetes
+
+```bash
+kubectl apply -f k8s.yaml
+kubectl get pods
+kubectl get services
+kubectl port-forward service/portfolio-service 8080:80
 ```
